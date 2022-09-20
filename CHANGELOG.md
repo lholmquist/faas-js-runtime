@@ -2,6 +2,21 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [0.2.0](https://www.github.com/lholmquist/faas-js-runtime/compare/v0.1.0...v0.2.0) (2022-09-20)
+
+
+### Features
+
+* add support for 1.0 structured cloud events ([#24](https://www.github.com/lholmquist/faas-js-runtime/issues/24)) ([b246948](https://www.github.com/lholmquist/faas-js-runtime/commit/b24694827ff0de4ebbbf3977cd7ab9fbf6e14391))
+* change module name to faas-js-runtime ([#56](https://www.github.com/lholmquist/faas-js-runtime/issues/56)) ([304eba6](https://www.github.com/lholmquist/faas-js-runtime/commit/304eba608ec3a7c45069ed3092dfb3af13c2456a))
+* provide structured logger to functions in context ([#28](https://www.github.com/lholmquist/faas-js-runtime/issues/28)) ([0bec8df](https://www.github.com/lholmquist/faas-js-runtime/commit/0bec8df02425719f0dc5ad974164bee8393d3a9e))
+
+
+### Bug Fixes
+
+* **README:** update sample to use correct namespaced module ([#26](https://www.github.com/lholmquist/faas-js-runtime/issues/26)) ([293e557](https://www.github.com/lholmquist/faas-js-runtime/commit/293e55747ed0ee92b0ea241a29946bab0fdb24ec))
+* remove openwhisk varaiables from context ([#57](https://www.github.com/lholmquist/faas-js-runtime/issues/57)) ([bb07696](https://www.github.com/lholmquist/faas-js-runtime/commit/bb076960a6a87afec828336ce5e7e19e92cfc7c6))
+
 ### [0.2.3](https://github.com/openshift-cloud-functions/faas-js-runtime/compare/v0.2.2...v0.2.3) (2020-09-04)
 
 ### [0.2.2](https://github.com/openshift-cloud-functions/faas-js-runtime/compare/v0.2.1...v0.2.2) (2020-09-02)
