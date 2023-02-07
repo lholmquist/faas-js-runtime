@@ -32,9 +32,17 @@ async function runServer(file) {
     const filePath = extractFullPath(file);
     const code = await loadFunction(filePath);
 
+    // TODO: start here for loading a custom health/liveness function
+
     if (typeof code === 'function') {
       server = await start(code, options);
     } else if (typeof code.handle === 'function') {
+      // Will only be here if the export of the function is an object
+      // If the user is going to override the liveness/health functions, this is it
+
+      // Probably a better way to do this
+      options.liveness = code.liveness;
+      options.readiness = code.readiness;
       server = await start(code.handle, options);
     } else {
       console.error(code);

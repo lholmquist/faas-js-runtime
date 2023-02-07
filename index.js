@@ -14,6 +14,9 @@ const PORT = 8080;
 
 // Invoker
 function start(func, options) {
+  // This is called from cli.js, passing in the functions and options
+  // which at this point is port and logLevel
+  console.log('calling start');
   options = options || {};
 
   // Load a func.yaml file if it exists
@@ -57,6 +60,7 @@ function start(func, options) {
   // This is passed as a parameter to the function when it's invoked
   server.decorateRequest('fcontext');
   server.addHook('preHandler', (req, reply, done) => {
+    console.log('calling preHandler');
     req.fcontext = new Context(req);
     done();
   });
@@ -67,7 +71,9 @@ function start(func, options) {
 
   // Configures the server to handle incoming requests to the function itself,
   // and also to other endpoints such as telemetry and liveness/readiness
-  requestHandler(server, { func, funcConfig });
+
+  // TODO: pass the health/liveness functions here?
+  requestHandler(server, { func, funcConfig, options });
 
   return new Promise((resolve, reject) => {
     server.listen({
